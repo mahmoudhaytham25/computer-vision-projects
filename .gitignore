@@ -19,3 +19,6 @@ outputs/*.mov
 
 # Model checkpoints (downloaded by notebooks at runtime)
 *.pt
+
+# Local-only interview prep notes — never commit
+INTERVIEW_CHEATSHEET.md

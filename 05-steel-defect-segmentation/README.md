@@ -20,15 +20,22 @@ Another failure mode — false-positive defects on a clean surface:
 
 ## What's inside
 
-- **RLE → mask pipeline** — decodes the competition's run-length encodings,
-  reshapes the per-class mask columns, and filters mostly-empty samples.
-- **Custom `UNetResNet`** — U-Net decoder with skip connections on top of a
-  ResNet-50 encoder, hand-built in PyTorch.
+- **RLE → mask pipeline** — decodes the competition's run-length encodings
+  (1-indexed start/length pairs reshaped column-major), then rebalances the
+  training set by dropping empty images and dominant class-3-only samples
+  (cap of 6,000 dropped rows).
+- **U-Net + ResNet encoder** — a hand-built `UNetResNet` (torchvision ResNet
+  encoder + ConvTranspose2d decoder blocks with skip connections) is defined
+  in the notebook; the trained model uses the identically-named
+  `segmentation_models_pytorch` wrapper (`smp.Unet`, ResNet-50 encoder,
+  ImageNet weights, encoder frozen).
 - **Architecture comparison** — `UNetPlusPlusResNet`, `PSPNetResNet`, and
-  `FPNResNet` variants defined alongside (also via
-  `segmentation_models_pytorch`).
-- **Metrics** — Dice coefficient and mIoU tracked per epoch;
-  `training_metrics_UnetResNet50.pt` checkpoints let runs resume.
+  `FPNResNet` variants defined alongside (via `segmentation_models_pytorch`,
+  frozen encoders).
+- **Metrics** — Dice coefficient and mIoU tracked per epoch; metric history
+  is saved to `training_metrics_UnetResNet50.pt` so curves accumulate across
+  resumed runs (model weights are checkpointed separately as
+  `UnetRES50_model_epoch_*.pth`).
 
 ## Results (15 epochs)
 

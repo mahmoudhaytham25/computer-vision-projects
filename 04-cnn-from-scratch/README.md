@@ -8,16 +8,18 @@ a 4-class pet facial-expression classification task.
 
 | Notebook | Model |
 |---|---|
-| `vgg16.ipynb` | VGG-16: stacked 3×3 conv blocks + max-pool, FC classifier head |
-| `densenet121.ipynb` | DenseNet-121: dense blocks (growth rate 32), bottleneck 1×1 convs, transition layers |
+| `vgg16.ipynb` | VGG-16 (with BatchNorm): stacked 3×3 conv blocks + max-pool, 3-layer FC classifier head with dropout |
+| `densenet121.ipynb` | DenseNet-121 layout: dense blocks (6/12/24/16 layers, growth rate 32) + 1×1-conv transition layers |
 | `densenet121_dropout.ipynb` | Same architecture with dropout in the dense/transition blocks and classifier head |
 
 ## Setup
 
-- Custom `Dataset` with on-the-fly augmentation (4 variants per image),
-  `DataLoader` pipeline, per-epoch train/val/test metrics, loss & accuracy
+- Custom `Dataset` with on-the-fly augmentation (4 variants per training
+  image: original + horizontal/vertical/both flips), `DataLoader` pipeline,
+  per-epoch train/val metrics with a final test evaluation, loss & accuracy
   curves.
-- Training: Adam + CrossEntropyLoss + StepLR, 30 epochs.
+- Training: Adam (lr=1e-4) + CrossEntropyLoss + `ReduceLROnPlateau`
+  (factor 0.1, patience 3), configured for 30 epochs.
 - Dataset: [`anshtanwar/pets-facial-expression-dataset`](https://www.kaggle.com/datasets/anshtanwar/pets-facial-expression-dataset)
   (4 classes: happy, sad, angry, other) — fetched automatically via `kagglehub`
   on first run. Needs a Kaggle API token at `~/.kaggle/kaggle.json`.
