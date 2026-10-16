@@ -10,6 +10,7 @@ CNN architectures implemented from scratch in PyTorch.
 | 03 | [Stereo Disparity](03-stereo-disparity/) | Block matching (SAD/SSD), dynamic-programming scanline alignment with occlusion handling | [notebook](03-stereo-disparity/stereo_disparity.ipynb) |
 | 04 | [CNNs From Scratch](04-cnn-from-scratch/) | VGG-16 & DenseNet-121 hand-built in PyTorch, custom augmentation, dropout ablation | [notebooks](04-cnn-from-scratch/) |
 | 05 | [Steel Defect Segmentation](05-steel-defect-segmentation/) | Semantic segmentation, U-Net with ResNet-50 encoder built from scratch, UNet++/PSPNet/FPN variants, Dice & mIoU, RLE mask decoding | [notebook](05-steel-defect-segmentation/steel_defect_segmentation.ipynb) |
+| 06 | [YOLOv5 From Scratch](06-yolov5-from-scratch/) | CSP-Darknet backbone, PANet neck, anchor-based head, hand-written decode & NMS — verified bit-compatible with the official `yolov5s` checkpoint | [notebook](06-yolov5-from-scratch/yolov5_from_scratch.ipynb) |
 
 ## Highlights
 
@@ -30,6 +31,11 @@ inverse-warped mosaic:
 **Steel defect segmentation** — ground truth vs. U-Net prediction, same image:
 
 ![pred vs gt](05-steel-defect-segmentation/outputs/pred_vs_gt_1.png)
+
+**YOLOv5 from scratch** — hand-built architecture running the official
+`yolov5s` weights (state dict transfers with zero missing/extra keys):
+
+![yolo](06-yolov5-from-scratch/outputs/bus_detections.png)
 
 ## Setup
 

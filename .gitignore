@@ -16,3 +16,6 @@ venv/
 outputs/*.mp4
 outputs/*.avi
 outputs/*.mov
+
+# Model checkpoints (downloaded by notebooks at runtime)
+*.pt
