@@ -1,0 +1,15 @@
+# Core (projects 01–03)
+numpy>=1.24
+opencv-python>=4.8
+matplotlib>=3.7
+
+# Projects 04–05 (CNNs from scratch, steel defect segmentation)
+torch>=2.1
+torchvision>=0.16
+kagglehub>=0.3
+segmentation-models-pytorch>=0.3
+tqdm>=4.66
+Pillow>=10.0
+
+# Notebook runtime
+jupyter>=1.0
