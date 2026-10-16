@@ -25,22 +25,23 @@ Pipeline:
 
 ## Part 2 — Image mosaics (panorama stitching)
 
-Two-view stitching with inverse warping, plus a 3-view attempt on the
-Shanghai skyline images: matching and the first-pair mosaic succeed, but the
-final merge exposes a canvas-size edge case in `create_mosaic` (the paste
-slice assumes both inputs share dimensions) — the traceback is left visible
-in the notebook.
+Two-view stitching with inverse warping, extended to a 3-view panorama on
+the Shanghai skyline images.
 
 | SIFT matches | Stitched mosaic |
 |---|---|
 | ![matches](outputs/pano_matches.png) | ![mosaic](outputs/pano_mosaic.png) |
+
+3-view Shanghai panorama (`shanghai-21` + `shanghai-22` + `shanghai-23`):
+
+![3-view mosaic](outputs/shanghai_mosaic.png)
 
 ## Files
 
 | Path | Contents |
 |---|---|
 | `part1_ar_overlay.ipynb` | AR video overlay |
-| `part2_image_mosaics.ipynb` | 2-view mosaic + 3-view stitch attempt (final merge hits a `create_mosaic` edge case) |
+| `part2_image_mosaics.ipynb` | 2-view mosaic + 3-view Shanghai panorama |
 | `assets/` | `book.mov`, `ar_source.mov`, `cv_cover.jpg`, panorama & Shanghai image sets |
 | `outputs/` | Match visualizations, stitched results, AR demo GIF |
 
