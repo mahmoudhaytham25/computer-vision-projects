@@ -1,5 +1,14 @@
 # Computer Vision Projects
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+![Python 3](https://img.shields.io/badge/python-3-3776ab?logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/jupyter-notebooks-f37626?logo=jupyter&logoColor=white)
+
+![OpenCV](https://img.shields.io/badge/opencv-4-5c3ee8?logo=opencv&logoColor=white)
+![PyTorch](https://img.shields.io/badge/pytorch-2-ee4c2c?logo=pytorch&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-013243?logo=numpy&logoColor=white)
+![Kaggle](https://img.shields.io/badge/kaggle-datasets-20beff?logo=kaggle&logoColor=white)
+
 A collection of computer-vision projects — from classical OpenCV pipelines to
 CNN architectures implemented from scratch in PyTorch.
 
