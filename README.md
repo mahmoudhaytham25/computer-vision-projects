@@ -53,3 +53,9 @@ see their READMEs).
 
 - Rendered videos (`outputs/*.mp4|avi|mov`) are git-ignored to keep the repo
   light.
+
+## Credits
+
+- **[Mahmoud Haytham](https://github.com/mahmoudhaytham25)** — all projects
+- **[Mahmoud Al-Zamly](https://github.com/MahmoudElzamly25)** — project 05
+  collaborator

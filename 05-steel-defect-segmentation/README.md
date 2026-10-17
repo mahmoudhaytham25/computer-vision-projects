@@ -64,4 +64,5 @@ the paths in the first cells at your copy.
 
 ## Credits
 
-Built with Mahmoud Al-Zamly.
+Built by [Mahmoud Haytham](https://github.com/mahmoudhaytham25) and
+[Mahmoud Al-Zamly](https://github.com/MahmoudElzamly25).
